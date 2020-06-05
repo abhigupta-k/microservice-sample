@@ -1,0 +1,5 @@
+package com.abhi.api.repository;
+
+public class PaymentRepository {
+
+}

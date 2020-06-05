@@ -1,0 +1,17 @@
+package com.abhi.api.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.abhi.api.entity.Order;
+import com.abhi.api.repository.OrderRepository;
+
+@Service
+public class OrderService {
+	@Autowired
+	private OrderRepository repo;
+
+	public Order save(Order order) {
+		return repo.save(order);
+	}
+}

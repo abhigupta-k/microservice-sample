@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;order-service-microservice&apos; to &apos;Z-order-service-microservice&apos;&#x0A;- Original element: &apos;order-service-microservice&apos;&#x0A;- Renamed element: &apos;order-service-microservice&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;order-service-microservice&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=order-service-microservice" name="Z-order-service-microservice" references="true" stamp="1591331844230" version="1.0"/>
+</session>

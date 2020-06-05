@@ -1,0 +1,25 @@
+package com.abhi.api.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.abhi.api.common.Payment;
+import com.abhi.api.common.TransactionRequest;
+import com.abhi.api.entity.Order;
+import com.abhi.api.repository.OrderRepository;
+
+@Service
+public class OrderService {
+	@Autowired
+	private OrderRepository repo;
+
+	public Order saveOrder(TransactionRequest request) {
+		
+		Order order=request.getOrder();
+		Payment payment=request.getPayment();
+		payment.setOrderId(order.getId());
+		payment.setAmount(order.getPrice());
+		
+		return repo.save(order);
+	}
+}

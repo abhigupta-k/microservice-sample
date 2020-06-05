@@ -1,0 +1,10 @@
+package com.abhi.api.common;
+
+import com.abhi.api.entity.Order;
+
+public class TransactionResponse {
+
+	private Order order;
+	private int amount;
+	private String transactionId;
+}

@@ -1,0 +1,33 @@
+package com.abhi.api.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.abhi.api.common.Payment;
+import com.abhi.api.common.TransactionRequest;
+import com.abhi.api.entity.Order;
+import com.abhi.api.service.OrderService;
+
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+
+	@Autowired
+	private OrderService service;
+	
+	@PostMapping("/bookOrder") // Here we are not change in Order
+	//entity class we create one class for request
+	public Order bookOrder(@RequestBody TransactionRequest request) {
+		
+		Order order=request.getOrder();
+		Payment payment=request.getPayment();
+		payment.setOrderId(order.getId());
+		payment.setAmount(order.getPrice());
+		return service.save(order);
+		
+		// do a rest call to integrate with payment service
+	}
+}

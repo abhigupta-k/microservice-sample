@@ -1,0 +1,5 @@
+package com.abhi.api.repository;
+
+public interface OrderRepository {
+
+}

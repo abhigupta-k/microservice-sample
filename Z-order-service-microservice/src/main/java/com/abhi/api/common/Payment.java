@@ -1,0 +1,23 @@
+package com.abhi.api.common;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/*
+ *  We use this class as dto.
+ * 
+ * 
+ * */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Payment {
+	
+	private int paymentId; //auto generate
+	private String paymentStatus; // by random method
+	private String transactionId; // by uuid generate
+	private int orderId; //gave from rest call from order service
+	private double amount; // gave from order servive
+
+}
